@@ -18,3 +18,14 @@ for i in range(len(l)-1):
  result = recog.recognize_google(audio_file)
  d['chunk{}'.format(i+1)]=result
   
+  
+  #to store the text in a file
+l_cs=[d['chunk{}'.format(i+1)] for i in range(len(d))]
+text='\n'.join(l_cs)
+
+with open('extrated.txt',mode ='w') as file: 
+   file.write("Extracted Speech:") 
+   file.write("\n") 
+   file.write(text) 
+   print("Finally ready!")
+  
